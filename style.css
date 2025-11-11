@@ -1131,7 +1131,7 @@ body {
   max-width: 700px;
   margin: 0 auto;
   opacity: 0.9;
-  color: #090909bf;
+  color: #f3f6ff;
 }
 
 .divider {
@@ -1214,7 +1214,7 @@ body {
 }
 
 .stat-description {
-  color: #f5f7ff;
+  color: #050505;
   font-size: 16px;
   opacity: 0.9;
   line-height: 1.5;
