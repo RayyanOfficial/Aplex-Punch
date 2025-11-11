@@ -1046,6 +1046,7 @@ body {
   }
 }
 
+/* Reset and Base Styles */
 * {
   margin: 0;
   padding: 0;
@@ -1095,8 +1096,8 @@ body {
   padding: 80px 0;
   border-radius: 15px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
   position: relative;
+  /* overflow removed to avoid hiding cards */
 }
 
 .experience::before {
@@ -1108,6 +1109,7 @@ body {
   height: 100%;
   background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3QgZmlsbD0idXJsKCNwYXR0ZXJuKSIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIvPjwvc3ZnPg==');
   opacity: 0.3;
+  z-index: 0;
 }
 
 .section-title {
@@ -1150,7 +1152,7 @@ body {
 }
 
 .stat-card {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(10px);
   border-radius: 10px;
   padding: 40px 20px;
@@ -1160,6 +1162,7 @@ body {
   transition: transform 0.3s, box-shadow 0.3s;
   position: relative;
   overflow: hidden;
+  display: block;
 }
 
 .stat-card::before {
@@ -1211,13 +1214,13 @@ body {
 }
 
 .stat-description {
-  color: black;
+  color: #f5f7ff;
   font-size: 16px;
-  opacity: 0.8;
+  opacity: 0.9;
   line-height: 1.5;
 }
 
-/* Animation Classes */
+/* Animation */
 .fade-in {
   opacity: 0;
   transform: translateY(30px);
@@ -1238,7 +1241,6 @@ body {
   .section-title h1 {
     font-size: 36px;
   }
-
   .stat-number {
     font-size: 50px;
   }
@@ -1246,30 +1248,24 @@ body {
 
 @media (max-width: 768px) {
   .experience {
-    padding: 60px 0;
+    padding: 60px 20px;
   }
-
   .section-title h1 {
     font-size: 32px;
   }
-
   .section-title p {
     font-size: 16px;
   }
-
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
   }
-
   .stat-card {
     padding: 30px 15px;
   }
-
   .stat-number {
     font-size: 40px;
   }
-
   .stat-title {
     font-size: 18px;
   }
@@ -1278,12 +1274,11 @@ body {
 @media (max-width: 576px) {
   .stats-grid {
     grid-template-columns: 1fr;
+    gap: 15px;
   }
-
   .section-title h1 {
     font-size: 28px;
   }
-
   .stat-number {
     font-size: 36px;
   }
