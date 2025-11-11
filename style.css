@@ -538,6 +538,7 @@ nav,
 }
 
 /* ===== Footer Styling ===== */
+/* ===== Footer Styling ===== */
 .footer-section {
   background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
   color: #fff;
@@ -562,14 +563,8 @@ nav,
 }
 
 /* ===== Logo & About ===== */
-.footer-logo {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #fff;
-}
-
-.footer-logo span {
-  color: #00b4ff;
+.footer-logo img {
+  max-width: 230px;
 }
 
 .footer-desc {
@@ -596,8 +591,8 @@ nav,
   color: #fff;
   font-size: 1.1rem;
   transition: all 0.3s ease;
-  text-decoration: none; /* underline remove karne ke liye */
-  line-height: 0;        /* neeche wali line hatane ke liye */
+  text-decoration: none;
+  line-height: 0;
 }
 
 .social-icons a:hover {
@@ -631,34 +626,29 @@ nav,
   color: #00b4ff;
 }
 
-/* ===== Newsletter ===== */
-.newsletter-form {
+/* ===== Contact Info ===== */
+.contact-info ul {
+  list-style: none;
+  padding: 0;
+}
+
+.contact-info ul li {
+  margin: 0.8rem 0;
+  color: #ddd;
+  font-size: 0.95rem;
   display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
+  align-items: center;
+  gap: 0.6rem;
+  transition: color 0.3s ease;
 }
 
-.newsletter-form input {
-  padding: 0.7rem 1rem;
-  border: none;
-  border-radius: 30px;
-  outline: none;
-  font-size: 1rem;
+.contact-info ul li i {
+  color: #00b4ff;
+  font-size: 1.1rem;
 }
 
-.newsletter-form button {
-  background: linear-gradient(135deg, #00b4ff, #1a73e8);
-  color: #fff;
-  border: none;
-  padding: 0.7rem;
-  border-radius: 30px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.newsletter-form button:hover {
-  background: linear-gradient(135deg, #1a73e8, #00b4ff);
-  transform: translateY(-2px);
+.contact-info ul li:hover {
+  color: #00b4ff;
 }
 
 /* ===== Bottom Bar ===== */
@@ -670,9 +660,11 @@ nav,
   font-size: 0.9rem;
   position: relative;
 }
-.footer-bottom p{
+
+.footer-bottom p {
   color: white;
 }
+
 /* ===== Scroll to Top ===== */
 #scrollTopBtn {
   position: absolute;
@@ -693,20 +685,7 @@ nav,
   transform: translateY(-3px);
 }
 
-/* ===== Animation Keyframes ===== */
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* ===== Floating Background Animation ===== */
+/* ===== Floating Animation Background ===== */
 .footer-section::before {
   content: "";
   position: absolute;
@@ -730,31 +709,21 @@ nav,
 }
 
 @keyframes float1 {
-  0% {
-    transform: translate(0, 0);
-  }
-
-  50% {
-    transform: translate(30px, 40px);
-  }
-
-  100% {
-    transform: translate(0, 0);
-  }
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(30px, 40px); }
+  100% { transform: translate(0, 0); }
 }
 
 @keyframes float2 {
-  0% {
-    transform: translate(0, 0);
-  }
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(-40px, -30px); }
+  100% { transform: translate(0, 0); }
+}
 
-  50% {
-    transform: translate(-40px, -30px);
-  }
-
-  100% {
-    transform: translate(0, 0);
-  }
+/* ===== Animation Keyframes ===== */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* ===== Responsive ===== */
@@ -778,6 +747,10 @@ nav,
   #scrollTopBtn {
     right: 50%;
     transform: translateX(50%);
+  }
+
+  .contact-info ul li {
+    justify-content: center;
   }
 }
 
@@ -1469,32 +1442,44 @@ p.lead {
 
 
 /* softwere-section */
-/* ===== Software Section ===== */
+//* ===== Software Section ===== */
 .software-section {
   background: linear-gradient(135deg, #eff0f1, #dee4ec);
   text-align: center;
-  padding: 100px 20px;
-  color: #fff;
+  padding: 80px 20px;
+  color: #222;
   overflow: hidden;
 }
 
+/* ===== Container ===== */
+.software-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* ===== Title ===== */
 .software-title {
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: 800;
   margin-bottom: 10px;
+  color: #0D5ABD;
+  text-align: center;
+  letter-spacing: 0.5px;
   animation: fadeUp 1s ease forwards;
 }
 
+/* ===== Underline ===== */
 .underline {
-  width: 100px;
-  height: 4px;
-  margin: 0 auto 50px;
+  width: 80px;
+  height: 3px;
+  margin: 0 auto 40px;
   background: linear-gradient(90deg, #1659D8, #9BB6E3);
   border-radius: 4px;
   animation: expand 1s ease forwards;
 }
 
-/* ===== Logo Slider Animation ===== */
+/* ===== Logo Slider ===== */
 .logo-slider {
   overflow: hidden;
   position: relative;
@@ -1503,54 +1488,57 @@ p.lead {
 
 .slide-track {
   display: flex;
-  animation: scroll 25s linear infinite;
-  width: calc(250px * 12);
-  /* 12 logos total (6 + 6 duplicate) */
+  gap: 100px; /* ✅ big enough gap so logos don't repeat in one line */
+  width: max-content;
+  animation: scroll 60s linear infinite; /* slower to fit one line nicely */
 }
 
 .slide-track img {
-  width: 200px;
-  margin: 0 40px;
+  width: 80px;   /* ✅ smaller logo for spacing */
+  height: auto;
   filter: grayscale(1);
   transition: all 0.4s ease;
 }
 
 .slide-track img:hover {
   filter: grayscale(0);
-  transform: scale(1.1);
+  transform: scale(1.08);
 }
 
 /* ===== Animations ===== */
 @keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes expand {
-  from {
-    width: 0;
-  }
-
-  to {
-    width: 100px;
-  }
+  from { width: 0; }
+  to { width: 80px; }
 }
 
+/* Smooth infinite scroll */
 @keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); } /* scroll by half track width */
+}
 
-  100% {
-    transform: translateX(calc(-250px * 6));
-  }
+/* ===== Responsive Design ===== */
+@media (max-width: 1024px) {
+  .software-title { font-size: 1.6rem; }
+  .slide-track { gap: 80px; animation: scroll 55s linear infinite; }
+  .slide-track img { width: 70px; }
+}
+
+@media (max-width: 768px) {
+  .software-title { font-size: 1.5rem; }
+  .slide-track { gap: 60px; animation: scroll 50s linear infinite; }
+  .slide-track img { width: 60px; }
+}
+
+@media (max-width: 480px) {
+  .software-title { font-size: 1.3rem; }
+  .slide-track { gap: 50px; animation: scroll 45s linear infinite; }
+  .slide-track img { width: 50px; }
 }
 
 /* ===== Responsive ===== */
