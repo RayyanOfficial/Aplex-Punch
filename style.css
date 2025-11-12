@@ -1581,7 +1581,7 @@ body {
   color: var(--text);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
-  padding: 40px 20px;
+  padding: 40px 0; /* side padding hata diya */
 }
 
 /* Layout */
@@ -1592,6 +1592,7 @@ body {
   grid-template-columns: 1fr 1fr;
   gap: 50px;
   align-items: center;
+  padding: 0 20px; /* spacing controlled yahan se */
 }
 
 /* LEFT SIDE */
@@ -1635,6 +1636,8 @@ body {
   display: flex;
   align-items: center;
   gap: 28px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
 }
 
 .stat-box {
@@ -1705,6 +1708,12 @@ body {
   .about-container {
     grid-template-columns: 1fr;
     gap: 30px;
+    padding: 0 16px; /* thoda side padding reduce */
+  }
+
+  .about-content {
+    text-align: center;
+    padding-right: 0;
   }
 
   .about-heading {
@@ -1715,6 +1724,8 @@ body {
   .about-subtitle,
   .about-desc {
     text-align: center;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .about-stats {
@@ -1723,10 +1734,15 @@ body {
 
   .image-box {
     max-width: 480px;
+    margin: 0 auto;
   }
 }
 
 @media (max-width: 600px) {
+  .about-container {
+    padding: 0 12px; /* chhoti screens pe aur balanced spacing */
+  }
+
   .about-heading {
     font-size: 32px;
   }
@@ -1752,6 +1768,10 @@ body {
 
   .image-box {
     max-width: 300px;
+  }
+
+  .about-container {
+    padding: 0 10px;
   }
 }
 
